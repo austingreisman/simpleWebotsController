@@ -1,0 +1,69 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/Floor.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/road/protos/Road.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/road/protos/AddLaneRoadSegment.proto"
+EXTERNPROTO "../protos/TeslaModel3.proto"
+
+WorldInfo {
+  info [
+    "World generated using the Open Street Map to Webots importer"
+    "Author: David Mansolino <david.mansolino@epfl.ch>"
+  ]
+  gpsCoordinateSystem "WGS84"
+  gpsReference 45.51 6.56 0
+  lineScale 8
+  contactProperties [
+    ContactProperties {
+      material2 "wheel"
+      bounce 0.1
+      softCFM 1e-05
+    }
+    ContactProperties {
+      forceDependentSlip [
+        0.0005
+      ]
+      softERP 0.6
+      softCFM 1e-05
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.0319459065439845 0.3414053145463937 -0.939373126214797 0.46122841885860855
+  position -9.5505473871976 5.227790542870853 3.129023464798445
+  near 3
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  translation 0 0 -0.02
+  size 2130 2371
+  appearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/default/worlds/textures/grass.jpg"
+      ]
+    }
+    roughness 1
+    metalness 0
+  }
+}
+AddLaneRoadSegment {
+}
+TeslaModel3 {
+  hidden translation_1 0 0 0
+  hidden rotation_1 0.9999999754157913 -0.0001557822897257004 0.00015779827222689178 1.5707960247756334
+  hidden translation_2 0 0 0
+  hidden rotation_2 0.9999999754158739 0.00015578202947166874 -0.00015779800621152078 1.5707960247755497
+  hidden translation_3 0 0 0
+  hidden rotation_3 0.9999999049983435 0.00030822343073231147 -0.0003082233300064837 1.5707960950016615
+  hidden translation_4 0 0 0
+  hidden rotation_4 0.999999904998761 -0.0003082227531165746 0.0003082226523909684 1.5707960950012438
+  translation -0.0015032193486614887 1.5799691097829627e-09 0.2529416680511092
+  rotation -6.755080365191845e-07 -0.9999999999997715 -2.191378800511552e-08 0.007022311663491922
+  controller "my_controller"
+}
